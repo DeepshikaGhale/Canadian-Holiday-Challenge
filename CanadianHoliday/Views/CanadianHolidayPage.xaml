@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CanadianHoliday.Views.CanadianHolidayPage"
+             Title="Canadian Holiday Page"
+             xmlns:viewModels="clr-namespace:CanadianHoliday.ViewModels"
+             >
+    <ContentPage.BindingContext>
+        <viewModels:CanadianHolidayViewModel/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout>
+        <Label 
+            Text="List of Canadian Holiday"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <StackLayout>
+        <ListView ItemsSource="{Binding Holidays.holidays}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding nameEn}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
